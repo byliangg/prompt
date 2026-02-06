@@ -1,0 +1,7 @@
+[app]
+name = "prompt-hub"
+port = 8080
+
+[features]
+preview = true
+download = true

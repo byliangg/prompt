@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Prompt Hub</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="title">Prompt Hub</div>
+      </div>
+
+      <div class="sidebar-body">
+        <div class="search">
+          <input id="searchInput" type="search" placeholder="搜索 prompts / files" />
+        </div>
+
+        <div class="section">
+          <div class="section-title">Prompts</div>
+          <ul class="list" id="promptList"></ul>
+        </div>
+
+        <div class="section">
+          <div class="section-title">Files</div>
+          <ul class="list" id="fileList"></ul>
+        </div>
+      </div>
+
+      <div class="sidebar-footer">
+        <span class="subtitle">通过 Git 推送更新内容</span>
+      </div>
+    </aside>
+
+    <main class="content">
+      <header class="topbar">
+        <button class="icon-btn" id="toggleSidebar" aria-label="Toggle sidebar">☰</button>
+        <div class="topbar-info">
+          <div class="topbar-title" id="topbarTitle">选择条目</div>
+          <div class="topbar-meta" id="topbarMeta"></div>
+        </div>
+        <div class="topbar-actions">
+          <button class="ghost-btn" id="copyBtn" disabled>复制内容</button>
+          <a class="ghost-btn is-disabled" id="downloadBtn" href="#" download aria-disabled="true">下载文件</a>
+        </div>
+      </header>
+
+      <section class="detail" id="detail">
+        <div class="empty">
+          <div class="empty-title">选择左侧条目开始</div>
+          <div class="empty-subtitle">你可以在侧边栏打开 prompt 或文件，然后预览与复制。</div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="manifest.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
