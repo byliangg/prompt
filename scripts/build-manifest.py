@@ -99,6 +99,8 @@ def build_prompts():
         return []
     items = []
     for file in walk_files(PROMPTS_DIR):
+        if file.name.startswith("."):
+            continue
         if file.suffix.lower() != ".md":
             continue
         content = file.read_text(encoding="utf8")
@@ -125,7 +127,7 @@ def build_files():
         return []
     items = []
     for file in walk_files(FILES_DIR):
-        if file.name == ".DS_Store":
+        if file.name.startswith(".") or file.name == ".DS_Store":
             continue
         rel = file.relative_to(ROOT).as_posix()
         ext = file.suffix.lower()
